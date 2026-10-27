@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none" role="img" aria-label="栖野">
+  <defs>
+    <linearGradient id="g" x1="10" y1="8" x2="70" y2="72" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3A5C49"/>
+      <stop offset="1" stop-color="#1A2F23"/>
+    </linearGradient>
+  </defs>
+  <circle cx="40" cy="40" r="38" fill="#F4EFE6"/>
+  <path d="M6 54 C16 38, 26 34, 40 44 C54 34, 64 38, 74 54 L74 70 L6 70 Z" fill="url(#g)" opacity="0.4"/>
+  <path d="M10 58 C20 42, 28 34, 40 40 C52 34, 60 42, 70 58 L70 72 L10 72 Z" fill="url(#g)"/>
+  <path d="M27 49 L40 35 L53 49" stroke="#C4844A" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M31 49 V58 H49 V49" stroke="#C4844A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M40 35 V30" stroke="#C4844A" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M16 63 H64" stroke="#F4EFE6" stroke-width="1.6" stroke-linecap="round" opacity="0.5"/>
+</svg>
