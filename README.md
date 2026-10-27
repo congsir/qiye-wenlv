@@ -1,11 +1,10 @@
 # 栖野文旅有限公司 · 官网示意站
 
-精品文旅 / 民宿品牌官网。品牌自拟：深林绿 + 暖石 + 奶油 + 铜色点缀；首屏为雾山氛围 + 木屋院落篝火 WebGL（可拖曳柴火投入篝火）。
+精品文旅 / 民宿品牌官网。品牌自拟：深林绿 + 暖石 + 奶油 + 铜色点缀；首屏为实景木屋院落，仅篝火与可拖曳木柴是 WebGL。
 
 ## 本地预览
 
 ```bash
-cd /workspace/qiye-wenlv
 python3 -m http.server 8792
 # 浏览器打开 http://127.0.0.1:8792/
 ```
@@ -30,7 +29,7 @@ python3 -m http.server 8792
 ## 结构
 
 - `index.html` / `css/style.css` / `js/main.js` — 页面与 GSAP 交互
-- `src/gl.js` → `js/gl.bundle.js` — Three.js 雾山 + 木屋院落 + 可交互篝火（已打包）
+- `src/gl.js` → `js/gl.bundle.js` — 透明画布上的写实篝火与可拖曳木柴（已打包）。木屋来自实景照片，不再使用 3D 木屋
 - `brand/` — Logo、favicon、品牌板
 - `img/` — Unsplash 实景图（webp）
 - `handoff/` — 验收截图
@@ -44,10 +43,10 @@ python3 -m http.server 8792
 
 ## 首屏交互
 
-- 桌面：拖曳右下侧柴火堆中的木柴，松手即投入篝火；也可点柴后再点火堆。
+- 桌面：拖曳火坑旁的木柴，松手即投入篝火；也可点柴后再点火堆。
 - 手机：轻触柴火即可投入。
 - 添柴后火焰与暖光会短暂加强；共 4 束柴。
-- `prefers-reduced-motion` / 无 WebGL 时回退实景英雄图。
+- `prefers-reduced-motion` / 无 WebGL 时使用同一张木屋火坑实景图，不再盖一层 WebGL。
 
 ## 说明
 
