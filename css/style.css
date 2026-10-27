@@ -49,6 +49,23 @@ button,input,select,textarea{font:inherit;color:inherit}
 #gl{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0;transition:opacity .8s var(--ease)}
 html.js.webgl-on #gl{opacity:1}
 html.no-webgl #gl,html.rm #gl{display:none}
+html.webgl-on .hero{background:transparent}
+html.webgl-on .hero-fallback{opacity:.12;pointer-events:none}
+.hero-fallback{pointer-events:none}
+.hero.gl-grab{cursor:grab}
+.hero.gl-grabbing,.hero.is-dragging{cursor:grabbing}
+.hero.gl-pending{cursor:pointer}
+.hero-hint{position:absolute;z-index:2;right:max(24px, calc((100% - min(1120px, 100% - 48px)) / 2));
+  bottom:118px;margin:0;padding:8px 14px;border-radius:999px;
+  font-size:12px;letter-spacing:.12em;color:rgba(244,239,230,.72);
+  background:rgba(11,22,17,.42);border:1px solid rgba(196,132,74,.35);
+  backdrop-filter:blur(8px);pointer-events:none;max-width:min(280px, 70vw);
+  transition:opacity .4s var(--ease), border-color .4s}
+.hero-hint[hidden]{display:none!important}
+.hero-hint.done{border-color:rgba(143,168,146,.45);color:rgba(244,239,230,.55)}
+@media (max-width:720px){
+  .hero-hint{left:16px;right:auto;bottom:96px;font-size:11px;letter-spacing:.08em}
+}
 .grain{position:fixed;inset:0;z-index:2;pointer-events:none;opacity:.035;mix-blend-mode:multiply;
   background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
 }
@@ -133,8 +150,14 @@ main,header,footer{position:relative;z-index:3}
 html.webgl-on .hero-fallback{opacity:.28}
 .hero-veil{position:absolute;inset:0;z-index:1;pointer-events:none;
   background:
-    radial-gradient(ellipse 70% 55% at 70% 35%, rgba(196,132,74,.18), transparent 60%),
-    linear-gradient(180deg, rgba(11,22,17,.2) 0%, rgba(11,22,17,.15) 40%, rgba(11,22,17,.78) 100%)}
+    radial-gradient(ellipse 55% 50% at 72% 58%, rgba(196,132,74,.14), transparent 62%),
+    radial-gradient(ellipse 70% 55% at 70% 30%, rgba(196,132,74,.12), transparent 60%),
+    linear-gradient(180deg, rgba(11,22,17,.22) 0%, rgba(11,22,17,.08) 38%, rgba(11,22,17,.55) 72%, rgba(11,22,17,.82) 100%)}
+html.webgl-on .hero-veil{
+  background:
+    radial-gradient(ellipse 52% 48% at 70% 60%, rgba(255,154,74,.12), transparent 58%),
+    radial-gradient(ellipse 70% 55% at 70% 28%, rgba(196,132,74,.08), transparent 60%),
+    linear-gradient(180deg, rgba(11,22,17,.3) 0%, rgba(11,22,17,.04) 34%, rgba(11,22,17,.18) 58%, rgba(11,22,17,.72) 100%)}
 .hero-inner{position:relative;z-index:2;padding-bottom:48px;max-width:720px}
 .hero-title{font-family:var(--font-serif);font-weight:650;font-size:clamp(36px,6.2vw,68px);
   line-height:1.18;letter-spacing:.04em;margin:0 0 20px}
